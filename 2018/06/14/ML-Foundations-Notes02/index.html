@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="一、Perceptron Hypothesis Set假设: 特征空间：$x \subseteq R^n$ 输出空间：$y={+1, -1}$ 于是关于感知机有： $$h(x) = sign(\sum_{i=1}^nw_ix_i - threshold)$$">
+<meta name="keywords" content="机器学习基石">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习基石笔记：感知机">
+<meta property="og:url" content="https://haiwenzhang.github.io/2018/06/14/ML-Foundations-Notes02/index.html">
+<meta property="og:site_name" content="Haiwen">
+<meta property="og:description" content="一、Perceptron Hypothesis Set假设: 特征空间：$x \subseteq R^n$ 输出空间：$y={+1, -1}$ 于是关于感知机有： $$h(x) = sign(\sum_{i=1}^nw_ix_i - threshold)$$">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://haiwenzhang.github.io/images/machine_learning_foundations/perceptron_01.png">
+<meta property="og:image" content="https://haiwenzhang.github.io/images/machine_learning_foundations/perceptron_02.png">
+<meta property="og:image" content="https://haiwenzhang.github.io/images/machine_learning_foundations/perceptron_03.png">
+<meta property="og:image" content="https://haiwenzhang.github.io/images/machine_learning_foundations/perceptron_04.png">
+<meta property="og:updated_time" content="2019-04-28T02:27:15.282Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习基石笔记：感知机">
+<meta name="twitter:description" content="一、Perceptron Hypothesis Set假设: 特征空间：$x \subseteq R^n$ 输出空间：$y={+1, -1}$ 于是关于感知机有： $$h(x) = sign(\sum_{i=1}^nw_ix_i - threshold)$$">
+<meta name="twitter:image" content="https://haiwenzhang.github.io/images/machine_learning_foundations/perceptron_01.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://haiwenzhang.github.io/2018/06/14/ML-Foundations-Notes02/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>机器学习基石笔记：感知机 | Haiwen</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Haiwen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/06/14/ML-Foundations-Notes02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Haiwen Zhang">
+      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Haiwen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习基石笔记：感知机
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-14 16:10:05" itemprop="dateCreated datePublished" datetime="2018-06-14T16:10:05+08:00">2018-06-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、Perceptron-Hypothesis-Set"><a href="#一、Perceptron-Hypothesis-Set" class="headerlink" title="一、Perceptron Hypothesis Set"></a>一、Perceptron Hypothesis Set</h2><p>假设:</p>
+<p>特征空间：$x \subseteq R^n$</p>
+<p>输出空间：$y={+1, -1}$</p>
+<p>于是关于感知机有：</p>
+<p>$$<br>h(x) = sign(\sum_{i=1}^nw_ix_i - threshold)<br>$$</p>
+<a id="more"></a>
+<p>为了计算方便，通常我们把阈值threshold当成$w_0$, 引入一个$x_0=-1$与$w_0$相乘，于是$h(x)$的表达式可以做如下变换：</p>
+<p>$$<br>\begin{aligned}<br>   h(x) &amp;= sign(\sum_{i=1}^nw_ix_i - threshold) \<br>   &amp;= sign(\sum_{i=1}^nw_ix_i + (threshold)\cdot(-1)) \<br>   &amp;= sign(\sum_{i=1}^nw_ix_i + w_0\cdot(-1)) \<br>   &amp;= sign(\sum_{i=0}^nw_ix_i) \<br>   &amp;= sign(W^TX)<br>\end{aligned}<br>$$</p>
+<p>假设Perceptrons在二维平面上，即$h(x)=sign(w_0x_0 + w_1x_1 + w_2x_2)$.<br>其中$w_0x_0 + w_1x_1 + w_2x_2=0$是平面上一条分类直线，直线一边是正类(+1,用蓝色的$\circ$表示),另一边则是负类(-1, 用红色的x表示).不同的$w$对应二维平面上不同的直线，下图就是两个感知机模型的二维平面图：</p>
+<p><img src="/images/machine_learning_foundations/perceptron_01.png" alt></p>
+<p>注意一下，感知机线性分类不限于二维空间，在高维的空间中，我们将不同类分开的“线”称之为线性超平面。</p>
+<h2 id="二、Perceptron-Learning-Algorithm-PLA"><a href="#二、Perceptron-Learning-Algorithm-PLA" class="headerlink" title="二、Perceptron Learning Algorithm(PLA)"></a>二、Perceptron Learning Algorithm(PLA)</h2><p>现在我们有了第一个机器学习算法——感知机，接下来我们就要设计一个机器学习演算法$A$，去学到一个最好的直线使得该直线可以将所有的正类和负类分开。那么怎么去设计这样一个演算法呢？</p>
+<p>先列出我们现有的条件：</p>
+<ol>
+<li>我们想学到一个最好的$g \approx f$ ($f$ 未知);</li>
+<li>在数据集$D$中，至少存在一个$g(x_n)=f(x_n)=y_n$；</li>
+<li>困难得地方是$H$有无限种可能。</li>
+</ol>
+<p>Idea:</p>
+<ul>
+<li>从某一个$g_0$开始，不断地修正$g$在数据集$D$上所犯的错误；</li>
+<li>$g_0$用$w_0$表示。</li>
+</ul>
+<p>算法：</p>
+<p><img src="/images/machine_learning_foundations/perceptron_02.png" alt></p>
+<h2 id="三、Guarantee-of-PLA"><a href="#三、Guarantee-of-PLA" class="headerlink" title="三、Guarantee of PLA"></a>三、Guarantee of PLA</h2><p>根据PLA的定义，当找到一条直线，能将所有平面上的点都分类正确，那么PLA就停止了。要达到这个终止条件，就必须保证$D$是线性可分。如果是非线性可分的，那么，PLA就不会停止。那么对于线性可分的情况下，我们只是直观的觉得PLA会停止，接下来我们尝试去证明一下这个结论：</p>
+<p>我们不妨假设存在这样一条直线可以将类分开，令这条直线的权重为$w_f$，则对于数据集$D$上任意一个点满足$y_n=sign(w_{f}^Tx_{n})$</p>
+<p>于是有一下条件成立：</p>
+<ul>
+<li>对于任意一点成立，$w_f$有：</li>
+</ul>
+<p>$$<br>y_{n(t)}w_{f}x_{n(t)} \geq \min\limits_{n}y_{n}w_{f}x_{n} &gt; 0<br>$$ </p>
+<ul>
+<li>$w_{t}$在有错的时候更新，所以一定有：</li>
+</ul>
+<p>$$<br>  sign(w_{t}^Tx_{n(t)})    \neq<br>   y_{n(t)} \Leftrightarrow y_{n(t)w_{t}^Tx_{n(t)}} \le 0<br>$$</p>
+<ul>
+<li>$w_{t}$的更新方式为：</li>
+</ul>
+<p>$$<br>w_{t} = w_{t-1} + y_{n(t)}x_{n(t)}<br>$$</p>
+<p>对于$w_{t}$我们可以推导出：</p>
+<p>$$<br>\begin{aligned}<br>   w_{f}^Tw_{t} &amp;=  w_{f}^T(w_{t-1} + y_{n(t-1)}x_{n(t-1)}) \<br>   &amp;\geq w_{f}^Tw_{t-1} + \min\limits_{n}y_{n}w_{f}x_{n} \<br>   &amp;\geq w_{f}^Tw_{t-2} + 2 \cdot \min\limits_{n}y_{n}w_{f}x_{n} \<br>   &amp;… \<br>   &amp;\geq w_{f}w_{0} + T \cdot \min\limits_{n}y_{n}w_{f}x_{n} \<br>   &amp;\geq  T \cdot \min\limits_{n}y_{n}w_{f}x_{n}<br>\end{aligned}<br>$$</p>
+<p>对于$||w_{t}||$我们可以推导出：</p>
+<p>$$<br>\begin{aligned}<br>   ||w_{t}||^2 &amp;= ||w_{t-1} + y_{n(t-1)}x_{n(t-1)} ||^2 \<br>   &amp;= ||w_{t-1}||^2 + 2\cdot y_{n(t-1)}w_{t}^Tx_{n(t-1)} + ||y_{n(t-1)}x_{n(t-1)}||^2 \<br>   &amp;\leq ||w_{t-1}||^2 + 0 + ||y_{n(t-1)}x_{n(t-1)}||^2 \<br>   &amp;\leq ||w_{t-1}||^2 + \max \limits_{n}||x_{n}||^2 \<br>   &amp;\leq ||w_{t-1}||^2 + 2 \cdot \max \limits_{n}||x_{n}||^2 \<br>   &amp;… \<br>   &amp;\leq ||w_{0}||^2 + T \cdot \max \limits_{n}||x_{n}||^2 \<br>   &amp;\leq T \cdot \max \limits_{n}||x_{n}||^2<br>\end{aligned}<br>$$</p>
+<p>综合上述两个结论有：</p>
+<p>$$<br>\begin{aligned}<br>  {w_{f}^T\over||w_{f}||}\cdot{w_{T}\over||w_{T}||} &amp;= {T \cdot \min\limits_{n}y_{n}w_{f}^Tx_{n} \over ||w_{f}^T||\cdot||w_{t}||} \<br>  &amp;\geq {T \cdot \min\limits_{n}y_{n}w_{f}^Tx_{n} \over ||w_{f}^T|| \cdot \sqrt{T} \cdot \max\limits_{n}||x_{n}||} \<br>  &amp;\geq {\sqrt{T} \cdot \min\limits_{n}y_{n}w_{f}^Tx_{n} \over ||w_{f}^T|| \cdot \max\limits_{n}||x_{n}||} = \sqrt{T} \cdot constant<br>\end{aligned}<br>$$</p>
+<p>又因为${w_{f}^T\over||w_{f}||}\cdot{w_{f}^T\over||w_{f}||} \leq 1$, 于是就有：</p>
+<p>$$<br>\begin{aligned}<br>  {\sqrt{T} \cdot \min\limits_{n}y_{n}w_{f}^Tx_{n} \over ||w_{f}^T|| \cdot \max\limits_{n}||x_{n}||} \leq 1 \<br>  \Leftrightarrow T \leq {\max\limits_{n}||x_{n}||^2\cdot||w_{f}^T||^2 \over (\min\limits_{n}y_{n}w_{f}^Tx_{n})^2} = {R^2 \over \rho^2}<br>\end{aligned}<br>$$</p>
+<p>从上述推导中可知次数$T$是有上界的，经过有限次搜索可以找到将数据集$D$完全正确分开的线性超平面，所以PLA算法是会停止的。</p>
+<h2 id="四、Non-Separable-Data"><a href="#四、Non-Separable-Data" class="headerlink" title="四、Non-Separable Data"></a>四、Non-Separable Data</h2><p>从第三部分可知，对于线性可分的数据，PLA算法是可以停下来，并且找到线性超平面的，但是对于非线性可分的数据，$w_{f}$并不存在，于是上述推导并不成立，PLA就不一定会停下来。事实上，现实中的大部分数据集$D$, 都会掺杂着噪声，这时机器学习的流程是：</p>
+<p><img src="/images/machine_learning_foundations/perceptron_03.png" alt></p>
+<p>对于非线性的问题中，我们可以容忍一些点不能够被线性超平面正确分类，但这种情况越少发生约好，于是我们对PLA算法进行了适当了修改变成了Packet Algorithm, 下面是该算法的执行流程：</p>
+<p><img src="/images/machine_learning_foundations/perceptron_04.png" alt></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习基石/" rel="tag"># 机器学习基石</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/10/ML-Foundations-Notes01/" rel="next" title="机器学习基石笔记：学习问题">
+                <i class="fa fa-chevron-left"></i> 机器学习基石笔记：学习问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/08/ML-Foundations-Notes03/" rel="prev" title="机器学习基石笔记：学习的类型">
+                机器学习基石笔记：学习的类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Haiwen Zhang</p>
+              <div class="site-description motion-element" itemprop="description">但行好事，莫问前程。河狭水急，人急计生。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Perceptron-Hypothesis-Set"><span class="nav-number">1.</span> <span class="nav-text">一、Perceptron Hypothesis Set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Perceptron-Learning-Algorithm-PLA"><span class="nav-number">2.</span> <span class="nav-text">二、Perceptron Learning Algorithm(PLA)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Guarantee-of-PLA"><span class="nav-number">3.</span> <span class="nav-text">三、Guarantee of PLA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Non-Separable-Data"><span class="nav-number">4.</span> <span class="nav-text">四、Non-Separable Data</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Haiwen Zhang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
