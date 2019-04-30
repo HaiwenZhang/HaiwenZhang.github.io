@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Haiwen</title>
+    <link>http://example.org/categories/</link>
+    <description>Recent content in Categories on Haiwen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Nov 2018 10:10:49 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>设计模式</title>
+      <link>http://example.org/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 01 Nov 2018 10:10:49 +0000</pubDate>
+      
+      <guid>http://example.org/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>http://example.org/categories/Machine-Learning/</link>
+      <pubDate>Sun, 08 Jul 2018 19:50:45 +0000</pubDate>
+      
+      <guid>http://example.org/categories/Machine-Learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spark</title>
+      <link>http://example.org/categories/Spark/</link>
+      <pubDate>Fri, 04 May 2018 19:37:39 +0000</pubDate>
+      
+      <guid>http://example.org/categories/Spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hadoop</title>
+      <link>http://example.org/categories/Hadoop/</link>
+      <pubDate>Fri, 27 Apr 2018 14:29:09 +0000</pubDate>
+      
+      <guid>http://example.org/categories/Hadoop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ruby</title>
+      <link>http://example.org/categories/Ruby/</link>
+      <pubDate>Sat, 24 Feb 2018 20:29:43 +0000</pubDate>
+      
+      <guid>http://example.org/categories/Ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scala</title>
+      <link>http://example.org/categories/Scala/</link>
+      <pubDate>Mon, 25 Dec 2017 16:48:17 +0000</pubDate>
+      
+      <guid>http://example.org/categories/Scala/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

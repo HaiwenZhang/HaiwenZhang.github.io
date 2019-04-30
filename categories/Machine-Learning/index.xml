@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Haiwen</title>
+    <link>http://example.org/categories/Machine-Learning/</link>
+    <description>Recent content in Machine Learning on Haiwen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Jul 2018 19:50:45 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/Machine-Learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>机器学习基石笔记：学习的类型</title>
+      <link>http://example.org/posts/ML-Foundations-Notes03/</link>
+      <pubDate>Sun, 08 Jul 2018 19:50:45 +0000</pubDate>
+      
+      <guid>http://example.org/posts/ML-Foundations-Notes03/</guid>
+      <description>&lt;h3 id=&#34;一-learning-with-different-output-space&#34;&gt;一、 Learning with Different Output Space&lt;/h3&gt;
+
+&lt;p&gt;二元分类问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+y=\{+1, -1\}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;输出只有两个，+1表示正类，-1表示负类。二元分类的问题很常见，例如信用卡发放、垃圾邮件判别等等。二元分类是机器学习最基本的问题。二元分类有线性模型和非线性模型，需要依据具体的问题选择对应的模型。下图展示了常见的二元分类：&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>机器学习基石笔记：感知机</title>
+      <link>http://example.org/posts/ML-Foundations-Notes02/</link>
+      <pubDate>Thu, 14 Jun 2018 16:10:05 +0000</pubDate>
+      
+      <guid>http://example.org/posts/ML-Foundations-Notes02/</guid>
+      <description>&lt;h2 id=&#34;一perceptron-hypothesis-set&#34;&gt;一、Perceptron Hypothesis Set&lt;/h2&gt;
+
+&lt;p&gt;假设:&lt;/p&gt;
+
+&lt;p&gt;特征空间：$x \subseteq R^n$&lt;/p&gt;
+
+&lt;p&gt;输出空间：$y={+1, -1}$&lt;/p&gt;
+
+&lt;p&gt;于是关于感知机有：&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+h(x) = sign(\sum_{i=1}^nw_ix_i - threshold)
+\]&lt;/span&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>机器学习基石笔记：学习问题</title>
+      <link>http://example.org/posts/ML-Foundations-Notes01/</link>
+      <pubDate>Sun, 10 Jun 2018 20:54:45 +0000</pubDate>
+      
+      <guid>http://example.org/posts/ML-Foundations-Notes01/</guid>
+      <description>&lt;h2 id=&#34;一what-is-machine-learning&#34;&gt;一、What is Machine Learning&lt;/h2&gt;
+
+&lt;p&gt;首先解释一下什么是“学习”？对于学习一词我们并不陌生，从来到这个世界的第一天起我们就开始用我们好奇的眼睛和智慧的大脑去观察这个世界、理解世界，在不断的练习和积累之后掌握了某种技能，这便是“学习”。同样了我们希望机器也可以像人类一样，通过观察大量的数据训练，发现事物规律，获得某种分析问题、解决问题的能力，这就是“机器学习”。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

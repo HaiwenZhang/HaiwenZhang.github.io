@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spark on Haiwen</title>
+    <link>http://example.org/categories/Spark/</link>
+    <description>Recent content in Spark on Haiwen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 May 2018 19:37:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/categories/Spark/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spark入门：可视化RDD的算子(3)</title>
+      <link>http://example.org/posts/visual-rdd-api-03/</link>
+      <pubDate>Fri, 04 May 2018 19:37:39 +0000</pubDate>
+      
+      <guid>http://example.org/posts/visual-rdd-api-03/</guid>
+      <description>&lt;h2 id=&#34;1-spark算子-mappartitions&#34;&gt;1. Spark算子：mapPartitions&lt;/h2&gt;
+
+&lt;p&gt;类似于map，但独立地在RDD的每一个分片上运行，因此在类型为T的RDD上运行时，func的函数类型必须是Iterator[T] =&amp;gt; Iterator[U]。假设有N个元素，有M个分区，那么map的函数的将被调用N次,而mapPartitions被调用M次,一个函数一次处理所有分区。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val x = sc.parallelize(Array(1,2,3), 2)
+def f(i:Iterator[Int])={ (i.sum,42).productIterator }
+val y = x.mapPartitions(f)
+
+// glom() flattens elements on the same partition
+val xOut = x.glom().collect()
+val yOut = y.glom().collect()
+
+// x: Array(Array(1), Array(2, 3))
+// y: Array(Array(1, 42), Array(5, 42))
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spark入门：可视化RDD的算子(2)</title>
+      <link>http://example.org/posts/visual-rdd-api-02/</link>
+      <pubDate>Thu, 03 May 2018 19:37:39 +0000</pubDate>
+      
+      <guid>http://example.org/posts/visual-rdd-api-02/</guid>
+      <description>&lt;h2 id=&#34;1-spark算子-groupby&#34;&gt;1. Spark算子：groupBy&lt;/h2&gt;
+
+&lt;p&gt;groupBy(f) f返回key，传入的RDD的各个元素根据这个key进行分组。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val x = sc.parallelize(Array(&amp;quot;John&amp;quot;, &amp;quot;Fred&amp;quot;, &amp;quot;Anna&amp;quot;, &amp;quot;James&amp;quot;))
+val y = x.groupBy(w =&amp;gt; w.charAt(0))
+println(x.collect().mkString(&amp;quot;,&amp;quot;))
+println(y.collect().mkString(&amp;quot;,&amp;quot;))
+
+// x: [&amp;quot;John&amp;quot;, &amp;quot;Fred&amp;quot;, &amp;quot;Anna&amp;quot;, &amp;quot;James&amp;quot;]
+// y: [(&#39;A&#39;,[&#39;Anna&#39;]),(&#39;J&#39;,[&#39;John&#39;, &#39;James&#39;]),(&#39;F&#39;,[&#39;Fred&#39;])]
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spark入门：可视化RDD的算子(1)</title>
+      <link>http://example.org/posts/visual-rdd-api-01/</link>
+      <pubDate>Wed, 02 May 2018 13:24:51 +0000</pubDate>
+      
+      <guid>http://example.org/posts/visual-rdd-api-01/</guid>
+      <description>&lt;h2 id=&#34;1-spark算子-map&#34;&gt;1. Spark算子：map&lt;/h2&gt;
+
+&lt;p&gt;map是对RDD中的每个元素都执行一个指定的函数来产生一个新的RDD，新RDD叫作MappedRDD(this, sc.clean(f))。任何原RDD中的元素在新RDD中都有且只有一个元素与之对应。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;val x = sc.parallelize(Array(&amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;))
+val y = x.map(z =&amp;gt; (z, 1))
+println(x.collect().mkString(&amp;quot;,&amp;quot;))
+println(y.collect().mkString(&amp;quot;,&amp;quot;))
+
+// x: [&amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;c&amp;quot;]
+// y: [(&amp;quot;b&amp;quot;, 1), (&amp;quot;a&amp;quot;, 1), (&amp;quot;c&amp;quot;, 1)]
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spark入门：核心概念RDD</title>
+      <link>http://example.org/posts/sparkrdd/</link>
+      <pubDate>Tue, 01 May 2018 12:13:53 +0000</pubDate>
+      
+      <guid>http://example.org/posts/sparkrdd/</guid>
+      <description>&lt;h2 id=&#34;1-1-什么是spark&#34;&gt;1.1 什么是Spark？&lt;/h2&gt;
+
+&lt;p&gt;Spark最初由美国加州伯克利大学（UCBerkeley）的AMP（Algorithms, Machines and People）实验室于2009年开发，是基于内存计算的大数据并行计算框架，可用于构建大型的、低延迟的数据分析应用程序。Spark在诞生之初属于研究性项目，其诸多核心理念均源自学术研究论文。2013年，Spark加入Apache孵化器项目后，开始获得迅猛的发展，如今已成为Apache软件基金会最重要的三大分布式计算系统开源项目之一（即Hadoop、Spark、Storm）。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.4" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Spark入门：核心概念RDD | Haiwen</title>
+    <meta property="og:title" content="Spark入门：核心概念RDD - Haiwen">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-05-01T12:13:53&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-05-01T12:13:53&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="Spark入门：核心概念RDD">
+        
+    <meta name="author" content="Haiwen">
+    <meta property="og:url" content="http://example.org/posts/sparkrdd/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://example.org/">
+                        Haiwen
+                    </a>
+                
+                <p class="description">但行好事，莫问前程</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="http://example.org/">首页</a>
+                    
+                    <a  href="http://example.org/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://example.org/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Spark入门：核心概念RDD</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年5月1日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://example.org/categories/Spark">Spark</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <h2 id="1-1-什么是spark">1.1 什么是Spark？</h2>
+
+<p>Spark最初由美国加州伯克利大学（UCBerkeley）的AMP（Algorithms, Machines and People）实验室于2009年开发，是基于内存计算的大数据并行计算框架，可用于构建大型的、低延迟的数据分析应用程序。Spark在诞生之初属于研究性项目，其诸多核心理念均源自学术研究论文。2013年，Spark加入Apache孵化器项目后，开始获得迅猛的发展，如今已成为Apache软件基金会最重要的三大分布式计算系统开源项目之一（即Hadoop、Spark、Storm）。</p>
+
+<p>Spark具有以下几个特性：
+1. 运行速度快：Spark使用先进的DAG（Directed Acyclic Graph，有向无环图）执行引擎，以支持循环数据流与内存计算，基于内存的执行速度可比Hadoop MapReduce快上百倍，基于磁盘的执行速度也能快十倍；
+2. 应用性好：Spark支持使用Scala、Java、Python和R语言进行编程，简洁的API设计有助于用户轻松构建并行程序，并且可以通过Spark Shell进行交互式编程；
+3. 通用性强：Spark提供了完整而强大的技术栈，包括SQL查询、流式计算、机器学习和图算法组件，这些组件可以无缝整合在同一个应用中，足以应对复杂的计算；
+4. 随处运行：Spark可运行于独立的集群模式中，或者运行于Hadoop中，也可运行于Amazon EC2等云环境中，并且可以访问HDFS、Cassandra、HBase、Hive等多种数据源。</p>
+
+<h2 id="1-2-spark与mapreduce比较">1.2 Spark与MapReduce比较</h2>
+
+<p>Spark借鉴Hadoop MapReduce发展而来的，继承了其分布式并行计算的优点以及改进了MapReduce的缺陷,具体如下：
+1. Spark把中间数据放在了内存中，迭代的效率高，而MapReduce将计算结果放在磁盘中，这样会影响整体的运行速度。Spark使用的是DAG分布式并行计算的编程模型，减少了迭代过程中数据的落地提高了计算效率。
+2. Spark容错性高。Spark使用了弹性分布式数据集(RDD)，他是分布在一组节点中的只读对象，具有很高的容错性
+3. Spark更加通用。Hadoop只提供了Map和Reduce两种操作，Spark则提供了Transformations和Actions两大类操作。</p>
+
+<h2 id="2-1-rdd概念">2.1 RDD概念</h2>
+
+<p>一个RDD就是一个分布式对象集合，本质上是一个只读的分区记录集合，每个RDD可以分成多个分区，每个分区就是一个数据集片段，并且一个RDD的不同分区可以被保存到集群中不同的节点上，从而可以在集群中的不同节点上进行并行计算。RDD有五大特点:
+1. 有一个分片列表；
+2. 一个函数计算每一个分片；
+3. 对其他RDD的依赖列表；
+4. 可选：key-value型的RDD是根据哈希来分区的；
+5. 可选：每一分片的优先计算位置。</p>
+
+<h2 id="2-2-rdd的简单执行过程">2.2 RDD的简单执行过程</h2>
+
+<ol>
+<li>RDD读入外部数据源（或者内存中的集合）进行创建；</li>
+<li>RDD经过一系列的“转换”操作，每一次都会产生不同的RDD，供给下一个“转换”使用；</li>
+<li>最后一个RDD经“行动”操作进行处理，并输出到外部数据源（或者变成Scala集合或标量）。</li>
+</ol>
+
+<h2 id="2-3-rdd的分类">2.3 RDD的分类</h2>
+
+<p>RDD的操作算子包括两类，一类叫做transformations，它是用来将RDD进行转化，构建RDD的血缘关系；另一类叫做actions，它是用来触发RDD的计算，得到RDD的相关计算结果或者将RDD保存的文件系统中。</p>
+
+<h2 id="2-4-rdd的依赖">2.4 RDD的依赖</h2>
+
+<p>RDDs通过操作算子进行转换，转换得到的新RDD包含了从其他RDDs衍生所必需的信息，RDDs之间维护着这种血缘关系，也称之为依赖。如下图所示，依赖包括两种，一种是窄依赖，RDDs之间分区是一一对应的，另一种是宽依赖，下游RDD的每个分区与上游RDD(也称之为父RDD)的每个分区都有关，是多对多的关系。
+<img src="https://wx4.sinaimg.cn/mw1024/b6d9ac4egy1fr0dhvkahsj21720oytcq.jpg" alt="" /></p>
+
+<h2 id="3-rdd是如何容错的">3 RDD是如何容错的？</h2>
+
+<ol>
+<li>RDD是不可变的，对RDD做操作时只会生成一个新的RDD而不是更改内部的数据；</li>
+<li>RDD实现了基于Lineage的容错机制。RDD之间的转换关系，构成Lineage。在部分计算结果丢失时，只需要根据这个Lineage重算即可；</li>
+<li>使用Checkpoint机制，当Lineage过长时，Spark集群需要花费很多时间将DAG的结果计算出来，如果中间有计算出现错误或者数据丢失，那么Spark根据RDD的依赖关系重新计算，这样会耗费很长时间。于是我们就可以用checkpoint机制将中间重要的结果持久化到高可用的存储系统(一般为HDFS)。</li>
+</ol>
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/hdfstheory/">HDFS读写浅析</a></li>
+        
+        <li><a href="/posts/hdfsinf/">HDFS 简介</a></li>
+        
+        <li><a href="/posts/rails-nginx-sendfile/">Rails Nginx 实现下载受限文件的优化</a></li>
+        
+        <li><a href="/posts/scala-fp-01/">Scala函数式编程札记01</a></li>
+        
+        <li><a href="/posts/metaprograming-in-ruby-01/">Ruby元编程读书笔记01</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://example.org/tags/Spark">Spark</a></li>
+                                
+                                <li><a href="http://example.org/tags/RDD">RDD</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://example.org/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://example.org/posts/design-pattern-simple-factory/" title="设计模式之简单工厂模式">设计模式之简单工厂模式</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/ML-Foundations-Notes03/" title="机器学习基石笔记：学习的类型">机器学习基石笔记：学习的类型</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/ML-Foundations-Notes02/" title="机器学习基石笔记：感知机">机器学习基石笔记：感知机</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/ML-Foundations-Notes01/" title="机器学习基石笔记：学习问题">机器学习基石笔记：学习问题</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/visual-rdd-api-03/" title="Spark入门：可视化RDD的算子(3)">Spark入门：可视化RDD的算子(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/visual-rdd-api-02/" title="Spark入门：可视化RDD的算子(2)">Spark入门：可视化RDD的算子(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/visual-rdd-api-01/" title="Spark入门：可视化RDD的算子(1)">Spark入门：可视化RDD的算子(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/sparkrdd/" title="Spark入门：核心概念RDD">Spark入门：核心概念RDD</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/hdfstheory/" title="HDFS读写浅析">HDFS读写浅析</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/hdfsinf/" title="HDFS 简介">HDFS 简介</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://example.org/categories/Hadoop/">Hadoop(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Machine-Learning/">Machine-Learning(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Ruby/">Ruby(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Scala/">Scala(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Spark/">Spark(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://example.org/tags/Hadoop/">Hadoop</a>
+    
+    <a href="http://example.org/tags/Java/">Java</a>
+    
+    <a href="http://example.org/tags/Nginx/">Nginx</a>
+    
+    <a href="http://example.org/tags/RDD/">RDD</a>
+    
+    <a href="http://example.org/tags/Rails/">Rails</a>
+    
+    <a href="http://example.org/tags/Ruby/">Ruby</a>
+    
+    <a href="http://example.org/tags/Scala/">Scala</a>
+    
+    <a href="http://example.org/tags/Spark/">Spark</a>
+    
+    <a href="http://example.org/tags/%E5%85%83%E7%BC%96%E7%A8%8B/">元编程</a>
+    
+    <a href="http://example.org/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">函数式编程</a>
+    
+    <a href="http://example.org/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/">机器学习基石</a>
+    
+    <a href="http://example.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://example.org/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://example.org/">Haiwen By Haiwen</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>

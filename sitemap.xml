@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+    <lastmod>2018-11-01T10:10:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2018-11-01T10:10:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/Java/</loc>
+    <lastmod>2018-11-01T10:10:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/</loc>
+    <lastmod>2018-11-01T10:10:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+    <lastmod>2018-11-01T10:10:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-11-01T10:10:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2018-11-01T10:10:49+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/design-pattern-simple-factory/</loc>
+    <lastmod>2018-11-01T10:10:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/Machine-Learning/</loc>
+    <lastmod>2018-07-08T19:50:45+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/</loc>
+    <lastmod>2018-07-08T19:50:45+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/ML-Foundations-Notes03/</loc>
+    <lastmod>2018-07-08T19:50:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/ML-Foundations-Notes02/</loc>
+    <lastmod>2018-06-14T16:10:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/ML-Foundations-Notes01/</loc>
+    <lastmod>2018-06-10T20:54:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/RDD/</loc>
+    <lastmod>2018-05-04T19:37:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/Spark/</loc>
+    <lastmod>2018-05-04T19:37:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/Spark/</loc>
+    <lastmod>2018-05-04T19:37:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/visual-rdd-api-03/</loc>
+    <lastmod>2018-05-04T19:37:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/visual-rdd-api-02/</loc>
+    <lastmod>2018-05-03T19:37:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/visual-rdd-api-01/</loc>
+    <lastmod>2018-05-02T13:24:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/sparkrdd/</loc>
+    <lastmod>2018-05-01T12:13:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/hdfstheory/</loc>
+    <lastmod>2018-04-27T14:29:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/Hadoop/</loc>
+    <lastmod>2018-04-27T14:29:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/Hadoop/</loc>
+    <lastmod>2018-04-27T14:29:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/hdfsinf/</loc>
+    <lastmod>2018-04-23T15:56:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/Nginx/</loc>
+    <lastmod>2018-02-24T20:29:43+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/Rails/</loc>
+    <lastmod>2018-02-24T20:29:43+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/rails-nginx-sendfile/</loc>
+    <lastmod>2018-02-24T20:29:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/Ruby/</loc>
+    <lastmod>2018-02-24T20:29:43+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/Scala/</loc>
+    <lastmod>2017-12-25T16:48:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/Scala/</loc>
+    <lastmod>2017-12-25T16:48:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/scala-fp-01/</loc>
+    <lastmod>2017-12-25T16:48:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2017-12-25T16:48:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/Ruby/</loc>
+    <lastmod>2017-12-24T09:42:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/posts/metaprograming-in-ruby-01/</loc>
+    <lastmod>2017-12-24T09:42:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/%E5%85%83%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2017-12-24T09:42:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/archives/</loc>
+  </url>
+  
+</urlset>

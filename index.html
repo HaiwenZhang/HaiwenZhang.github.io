@@ -1,2459 +1,544 @@
-<!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.1.0',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Haiwen">
-<meta property="og:url" content="https://haiwenzhang.github.io/index.html">
-<meta property="og:site_name" content="Haiwen">
-<meta property="og:description" content="但行好事，莫问前程。河狭水急，人急计生。">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Haiwen">
-<meta name="twitter:description" content="但行好事，莫问前程。河狭水急，人急计生。">
-
-
-
-
-
-  
-  
-  <link rel="canonical" href="https://haiwenzhang.github.io/">
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>Haiwen</title>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.4" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Haiwen | 但行好事，莫问前程</title>
+    <meta property="og:title" content="Haiwen | 但行好事，莫问前程">
+    <meta property="og:type" content="website">
+    <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="Mac/Gentoo党，Emacs/Vim异教徒，会写Python/Java/Scala程序, AI调参新手，徽学爱好者，菜鸟摄影师, 热爱葡萄酒。">
+    <meta property="og:url" content="http://example.org/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="http://example.org/index.xml" title="Haiwen" />
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  
-  
-    
-  
-
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Haiwen</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-    
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home menu-item-active">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
-  </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/11/01/design-pattern-simple-factory/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
                 
+                    <h1>
+                        <a id="logo" href="http://example.org/">
+                            Haiwen
+                        </a>
+                    </h1>
                 
-                <a href="/2018/11/01/design-pattern-simple-factory/" class="post-title-link" itemprop="url">设计模式之简单工厂模式</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-01 10:10:49" itemprop="dateCreated datePublished" datetime="2018-11-01T10:10:49+08:00">2018-11-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:26:44" itemprop="dateModified" datetime="2019-04-28T10:26:44+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/设计模式/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h2><p>简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式。在简单工厂模式中，可以根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/01/design-pattern-simple-factory/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+                <p class="description">但行好事，莫问前程</p>
             </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/07/08/ML-Foundations-Notes03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/07/08/ML-Foundations-Notes03/" class="post-title-link" itemprop="url">机器学习基石笔记：学习的类型</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-08 19:50:45" itemprop="dateCreated datePublished" datetime="2018-07-08T19:50:45+08:00">2018-07-08</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="一、-Learning-with-Different-Output-Space"><a href="#一、-Learning-with-Different-Output-Space" class="headerlink" title="一、 Learning with Different Output Space"></a>一、 Learning with Different Output Space</h3><p>二元分类问题：<br>$$<br>y={+1, -1}<br>$$<br>输出只有两个，+1表示正类，-1表示负类。二元分类的问题很常见，例如信用卡发放、垃圾邮件判别等等。二元分类是机器学习最基本的问题。二元分类有线性模型和非线性模型，需要依据具体的问题选择对应的模型。下图展示了常见的二元分类：</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/07/08/ML-Foundations-Notes03/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://example.org/">首页</a>
+                    
+                    <a  href="http://example.org/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://example.org/about/" title="关于">关于</a>
+                    
+                </nav>
             </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/06/14/ML-Foundations-Notes02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/06/14/ML-Foundations-Notes02/" class="post-title-link" itemprop="url">机器学习基石笔记：感知机</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-14 16:10:05" itemprop="dateCreated datePublished" datetime="2018-06-14T16:10:05+08:00">2018-06-14</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+    </div>
+</header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-      
+<div id="body">
+    <div class="container">
+        <div class="col-group">
 
-      
-        
-          <h2 id="一、Perceptron-Hypothesis-Set"><a href="#一、Perceptron-Hypothesis-Set" class="headerlink" title="一、Perceptron Hypothesis Set"></a>一、Perceptron Hypothesis Set</h2><p>假设:</p>
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/design-pattern-simple-factory/" title="设计模式之简单工厂模式" >设计模式之简单工厂模式</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年11月1日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="一-定义">一、定义</h2>
+
+<p>简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式。在简单工厂模式中，可以根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。</p>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/design-pattern-simple-factory/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/ML-Foundations-Notes03/" title="机器学习基石笔记：学习的类型" >机器学习基石笔记：学习的类型</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年7月8日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/Machine-Learning">Machine Learning</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h3 id="一-learning-with-different-output-space">一、 Learning with Different Output Space</h3>
+
+<p>二元分类问题：</p>
+
+<p><span  class="math">\[
+y=\{+1, -1\}
+\]</span></p>
+
+<p>输出只有两个，+1表示正类，-1表示负类。二元分类的问题很常见，例如信用卡发放、垃圾邮件判别等等。二元分类是机器学习最基本的问题。二元分类有线性模型和非线性模型，需要依据具体的问题选择对应的模型。下图展示了常见的二元分类：</p>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/ML-Foundations-Notes03/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/ML-Foundations-Notes02/" title="机器学习基石笔记：感知机" >机器学习基石笔记：感知机</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年6月14日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/Machine-Learning">Machine Learning</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="一perceptron-hypothesis-set">一、Perceptron Hypothesis Set</h2>
+
+<p>假设:</p>
+
 <p>特征空间：$x \subseteq R^n$</p>
+
 <p>输出空间：$y={+1, -1}$</p>
+
 <p>于是关于感知机有：</p>
-<p>$$<br>h(x) = sign(\sum_{i=1}^nw_ix_i - threshold)<br>$$</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/14/ML-Foundations-Notes02/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/06/10/ML-Foundations-Notes01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/06/10/ML-Foundations-Notes01/" class="post-title-link" itemprop="url">机器学习基石笔记：学习问题</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-10 20:54:45" itemprop="dateCreated datePublished" datetime="2018-06-10T20:54:45+08:00">2018-06-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="一、What-is-Machine-Learning"><a href="#一、What-is-Machine-Learning" class="headerlink" title="一、What is Machine Learning"></a>一、What is Machine Learning</h2><p>首先解释一下什么是“学习”？对于学习一词我们并不陌生，从来到这个世界的第一天起我们就开始用我们好奇的眼睛和智慧的大脑去观察这个世界、理解世界，在不断的练习和积累之后掌握了某种技能，这便是“学习”。同样了我们希望机器也可以像人类一样，通过观察大量的数据训练，发现事物规律，获得某种分析问题、解决问题的能力，这就是“机器学习”。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/10/ML-Foundations-Notes01/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/05/04/visual-rdd-api-03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/05/04/visual-rdd-api-03/" class="post-title-link" itemprop="url">Spark入门：可视化RDD的算子(3)</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-04 19:37:39" itemprop="dateCreated datePublished" datetime="2018-05-04T19:37:39+08:00">2018-05-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spark/" itemprop="url" rel="index"><span itemprop="name">Spark</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-Spark算子：mapPartitions"><a href="#1-Spark算子：mapPartitions" class="headerlink" title="1. Spark算子：mapPartitions"></a>1. Spark算子：mapPartitions</h2><p>类似于map，但独立地在RDD的每一个分片上运行，因此在类型为T的RDD上运行时，func的函数类型必须是Iterator[T] =&gt; Iterator[U]。假设有N个元素，有M个分区，那么map的函数的将被调用N次,而mapPartitions被调用M次,一个函数一次处理所有分区。</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> x = sc.parallelize(<span class="type">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>), <span class="number">2</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span></span>(i:<span class="type">Iterator</span>[<span class="type">Int</span>])=&#123; (i.sum,<span class="number">42</span>).productIterator &#125;</span><br><span class="line"><span class="keyword">val</span> y = x.mapPartitions(f)</span><br><span class="line"></span><br><span class="line"><span class="comment">// glom() flattens elements on the same partition</span></span><br><span class="line"><span class="keyword">val</span> xOut = x.glom().collect()</span><br><span class="line"><span class="keyword">val</span> yOut = y.glom().collect()</span><br><span class="line"></span><br><span class="line"><span class="comment">// x: Array(Array(1), Array(2, 3))</span></span><br><span class="line"><span class="comment">// y: Array(Array(1, 42), Array(5, 42))</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/05/04/visual-rdd-api-03/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/05/03/visual-rdd-api-02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/05/03/visual-rdd-api-02/" class="post-title-link" itemprop="url">Spark入门：可视化RDD的算子(2)</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-03 19:37:39" itemprop="dateCreated datePublished" datetime="2018-05-03T19:37:39+08:00">2018-05-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spark/" itemprop="url" rel="index"><span itemprop="name">Spark</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-Spark算子：groupBy"><a href="#1-Spark算子：groupBy" class="headerlink" title="1. Spark算子：groupBy"></a>1. Spark算子：groupBy</h2><p>groupBy(f) f返回key，传入的RDD的各个元素根据这个key进行分组。</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> x = sc.parallelize(<span class="type">Array</span>(<span class="string">"John"</span>, <span class="string">"Fred"</span>, <span class="string">"Anna"</span>, <span class="string">"James"</span>))</span><br><span class="line"><span class="keyword">val</span> y = x.groupBy(w =&gt; w.charAt(<span class="number">0</span>))</span><br><span class="line">println(x.collect().mkString(<span class="string">","</span>))</span><br><span class="line">println(y.collect().mkString(<span class="string">","</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">// x: ["John", "Fred", "Anna", "James"]</span></span><br><span class="line"><span class="comment">// y: [('A',['Anna']),('J',['John', 'James']),('F',['Fred'])]</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/05/03/visual-rdd-api-02/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/05/02/visual-rdd-api-01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/05/02/visual-rdd-api-01/" class="post-title-link" itemprop="url">Spark入门：可视化RDD的算子(1)</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-02 13:24:51" itemprop="dateCreated datePublished" datetime="2018-05-02T13:24:51+08:00">2018-05-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spark/" itemprop="url" rel="index"><span itemprop="name">Spark</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-Spark算子：map"><a href="#1-Spark算子：map" class="headerlink" title="1. Spark算子：map"></a>1. Spark算子：map</h2><p>map是对RDD中的每个元素都执行一个指定的函数来产生一个新的RDD，新RDD叫作MappedRDD(this, sc.clean(f))。任何原RDD中的元素在新RDD中都有且只有一个元素与之对应。</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> x = sc.parallelize(<span class="type">Array</span>(<span class="string">"b"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>))</span><br><span class="line"><span class="keyword">val</span> y = x.map(z =&gt; (z, <span class="number">1</span>))</span><br><span class="line">println(x.collect().mkString(<span class="string">","</span>))</span><br><span class="line">println(y.collect().mkString(<span class="string">","</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">// x: ["b", "a", "c"]</span></span><br><span class="line"><span class="comment">// y: [("b", 1), ("a", 1), ("c", 1)]</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/05/02/visual-rdd-api-01/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/05/01/sparkrdd/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/05/01/sparkrdd/" class="post-title-link" itemprop="url">Spark入门：核心概念RDD</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-01 12:13:53" itemprop="dateCreated datePublished" datetime="2018-05-01T12:13:53+08:00">2018-05-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spark/" itemprop="url" rel="index"><span itemprop="name">Spark</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-1-什么是Spark？"><a href="#1-1-什么是Spark？" class="headerlink" title="1.1 什么是Spark？"></a>1.1 什么是Spark？</h2><p>Spark最初由美国加州伯克利大学（UCBerkeley）的AMP（Algorithms, Machines and People）实验室于2009年开发，是基于内存计算的大数据并行计算框架，可用于构建大型的、低延迟的数据分析应用程序。Spark在诞生之初属于研究性项目，其诸多核心理念均源自学术研究论文。2013年，Spark加入Apache孵化器项目后，开始获得迅猛的发展，如今已成为Apache软件基金会最重要的三大分布式计算系统开源项目之一（即Hadoop、Spark、Storm）。<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/05/01/sparkrdd/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/04/27/hdfstheory/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/04/27/hdfstheory/" class="post-title-link" itemprop="url">HDFS读写浅析</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-04-27 14:29:09" itemprop="dateCreated datePublished" datetime="2018-04-27T14:29:09+08:00">2018-04-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hadoop/" itemprop="url" rel="index"><span itemprop="name">Hadoop</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="一、HDFS-架构"><a href="#一、HDFS-架构" class="headerlink" title="一、HDFS 架构"></a>一、HDFS 架构</h2>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/04/27/hdfstheory/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://haiwenzhang.github.io/2018/04/23/hdfsinf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Haiwen Zhang">
-      <meta itemprop="description" content="但行好事，莫问前程。河狭水急，人急计生。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Haiwen">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/04/23/hdfsinf/" class="post-title-link" itemprop="url">HDFS 简介</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-04-23 15:56:22" itemprop="dateCreated datePublished" datetime="2018-04-23T15:56:22+08:00">2018-04-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-28 10:27:15" itemprop="dateModified" datetime="2019-04-28T10:27:15+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hadoop/" itemprop="url" rel="index"><span itemprop="name">Hadoop</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-什么是HDFS"><a href="#1-什么是HDFS" class="headerlink" title="1 什么是HDFS?"></a>1 什么是HDFS?</h2><p>HDFS是一个分布式文件系统，适合部署在廉价的机器上。HDFS适合一次写入，多次读取的场景，且不支持文件的修改。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/04/23/hdfsinf/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
+<p><span  class="math">\[
+h(x) = sign(\sum_{i=1}^nw_ix_i - threshold)
+\]</span></p>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/ML-Foundations-Notes02/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/ML-Foundations-Notes01/" title="机器学习基石笔记：学习问题" >机器学习基石笔记：学习问题</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年6月10日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/Machine-Learning">Machine Learning</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="一what-is-machine-learning">一、What is Machine Learning</h2>
+
+<p>首先解释一下什么是“学习”？对于学习一词我们并不陌生，从来到这个世界的第一天起我们就开始用我们好奇的眼睛和智慧的大脑去观察这个世界、理解世界，在不断的练习和积累之后掌握了某种技能，这便是“学习”。同样了我们希望机器也可以像人类一样，通过观察大量的数据训练，发现事物规律，获得某种分析问题、解决问题的能力，这就是“机器学习”。</p>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/ML-Foundations-Notes01/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/visual-rdd-api-03/" title="Spark入门：可视化RDD的算子(3)" >Spark入门：可视化RDD的算子(3)</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年5月4日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/Spark">Spark</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="1-spark算子-mappartitions">1. Spark算子：mapPartitions</h2>
+
+<p>类似于map，但独立地在RDD的每一个分片上运行，因此在类型为T的RDD上运行时，func的函数类型必须是Iterator[T] =&gt; Iterator[U]。假设有N个元素，有M个分区，那么map的函数的将被调用N次,而mapPartitions被调用M次,一个函数一次处理所有分区。</p>
+
+<pre><code class="language-scala">val x = sc.parallelize(Array(1,2,3), 2)
+def f(i:Iterator[Int])={ (i.sum,42).productIterator }
+val y = x.mapPartitions(f)
+
+// glom() flattens elements on the same partition
+val xOut = x.glom().collect()
+val yOut = y.glom().collect()
+
+// x: Array(Array(1), Array(2, 3))
+// y: Array(Array(1, 42), Array(5, 42))
+</code></pre>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/visual-rdd-api-03/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/visual-rdd-api-02/" title="Spark入门：可视化RDD的算子(2)" >Spark入门：可视化RDD的算子(2)</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年5月3日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/Spark">Spark</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="1-spark算子-groupby">1. Spark算子：groupBy</h2>
+
+<p>groupBy(f) f返回key，传入的RDD的各个元素根据这个key进行分组。</p>
+
+<pre><code class="language-scala">val x = sc.parallelize(Array(&quot;John&quot;, &quot;Fred&quot;, &quot;Anna&quot;, &quot;James&quot;))
+val y = x.groupBy(w =&gt; w.charAt(0))
+println(x.collect().mkString(&quot;,&quot;))
+println(y.collect().mkString(&quot;,&quot;))
+
+// x: [&quot;John&quot;, &quot;Fred&quot;, &quot;Anna&quot;, &quot;James&quot;]
+// y: [('A',['Anna']),('J',['John', 'James']),('F',['Fred'])]
+</code></pre>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/visual-rdd-api-02/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/visual-rdd-api-01/" title="Spark入门：可视化RDD的算子(1)" >Spark入门：可视化RDD的算子(1)</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年5月2日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/Spark">Spark</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="1-spark算子-map">1. Spark算子：map</h2>
+
+<p>map是对RDD中的每个元素都执行一个指定的函数来产生一个新的RDD，新RDD叫作MappedRDD(this, sc.clean(f))。任何原RDD中的元素在新RDD中都有且只有一个元素与之对应。</p>
+
+<pre><code class="language-scala">val x = sc.parallelize(Array(&quot;b&quot;, &quot;a&quot;, &quot;c&quot;))
+val y = x.map(z =&gt; (z, 1))
+println(x.collect().mkString(&quot;,&quot;))
+println(y.collect().mkString(&quot;,&quot;))
+
+// x: [&quot;b&quot;, &quot;a&quot;, &quot;c&quot;]
+// y: [(&quot;b&quot;, 1), (&quot;a&quot;, 1), (&quot;c&quot;, 1)]
+</code></pre>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/visual-rdd-api-01/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/sparkrdd/" title="Spark入门：核心概念RDD" >Spark入门：核心概念RDD</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年5月1日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/Spark">Spark</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="1-1-什么是spark">1.1 什么是Spark？</h2>
+
+<p>Spark最初由美国加州伯克利大学（UCBerkeley）的AMP（Algorithms, Machines and People）实验室于2009年开发，是基于内存计算的大数据并行计算框架，可用于构建大型的、低延迟的数据分析应用程序。Spark在诞生之初属于研究性项目，其诸多核心理念均源自学术研究论文。2013年，Spark加入Apache孵化器项目后，开始获得迅猛的发展，如今已成为Apache软件基金会最重要的三大分布式计算系统开源项目之一（即Hadoop、Spark、Storm）。</p>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/sparkrdd/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/hdfstheory/" title="HDFS读写浅析" >HDFS读写浅析</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年4月27日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/Hadoop">Hadoop</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="一-hdfs-架构">一、HDFS 架构</h2>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/hdfstheory/">阅读全文</a></p>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://example.org/posts/hdfsinf/" title="HDFS 简介" >HDFS 简介</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2018年4月23日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="http://example.org/categories/Hadoop">Hadoop</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                <h2 id="1-什么是hdfs">1 什么是HDFS?</h2>
+
+<p>HDFS是一个分布式文件系统，适合部署在廉价的机器上。HDFS适合一次写入，多次读取的场景，且不支持文件的修改。</p>……
+                            </div>
+                            <p class="readmore"><a href="http://example.org/posts/hdfsinf/">阅读全文</a></p>
+                        </article>
+                    
+                    
+
+
+
+<ol class="page-navigator">
+    
+
+    
+    <li  class="current">
+        <a href="http://example.org/">1</a>
+    </li>
+    
+    <li >
+        <a href="http://example.org/page/2/">2</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="http://example.org/page/2/">下一页</a>
+    </li>
+    
+</ol>
 
-      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Haiwen Zhang</p>
-              <div class="site-description motion-element" itemprop="description">但行好事，莫问前程。河狭水急，人急计生。</div>
-          </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">13</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
                 </div>
-              
+            </div>
 
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">分类</span>
-                  
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">12</span>
-                    <span class="site-state-item-name">标签</span>
-                  
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://example.org/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://example.org/posts/design-pattern-simple-factory/" title="设计模式之简单工厂模式">设计模式之简单工厂模式</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/ML-Foundations-Notes03/" title="机器学习基石笔记：学习的类型">机器学习基石笔记：学习的类型</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/ML-Foundations-Notes02/" title="机器学习基石笔记：感知机">机器学习基石笔记：感知机</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/ML-Foundations-Notes01/" title="机器学习基石笔记：学习问题">机器学习基石笔记：学习问题</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/visual-rdd-api-03/" title="Spark入门：可视化RDD的算子(3)">Spark入门：可视化RDD的算子(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/visual-rdd-api-02/" title="Spark入门：可视化RDD的算子(2)">Spark入门：可视化RDD的算子(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/visual-rdd-api-01/" title="Spark入门：可视化RDD的算子(1)">Spark入门：可视化RDD的算子(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/sparkrdd/" title="Spark入门：核心概念RDD">Spark入门：核心概念RDD</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/hdfstheory/" title="HDFS读写浅析">HDFS读写浅析</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/hdfsinf/" title="HDFS 简介">HDFS 简介</a>
+    </li>
+    
+</ul>
+    </section>
 
-      
+    
 
-    </div>
-  </aside>
-  
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://example.org/categories/Hadoop/">Hadoop(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Machine-Learning/">Machine-Learning(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Ruby/">Ruby(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Scala/">Scala(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Spark/">Spark(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式(1)</a>
+    </li>
+    
+</ul>
+    </section>
 
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Haiwen Zhang</span>
-
-  
-
-  
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://example.org/tags/Hadoop/">Hadoop</a>
+    
+    <a href="http://example.org/tags/Java/">Java</a>
+    
+    <a href="http://example.org/tags/Nginx/">Nginx</a>
+    
+    <a href="http://example.org/tags/RDD/">RDD</a>
+    
+    <a href="http://example.org/tags/Rails/">Rails</a>
+    
+    <a href="http://example.org/tags/Ruby/">Ruby</a>
+    
+    <a href="http://example.org/tags/Scala/">Scala</a>
+    
+    <a href="http://example.org/tags/Spark/">Spark</a>
+    
+    <a href="http://example.org/tags/%E5%85%83%E7%BC%96%E7%A8%8B/">元编程</a>
+    
+    <a href="http://example.org/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">函数式编程</a>
+    
+    <a href="http://example.org/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/">机器学习基石</a>
+    
+    <a href="http://example.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+    
 </div>
+    </section>
 
+    
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
-
-
-
-
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://example.org/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://example.org/">Haiwen By Haiwen</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         
+    </div>
+</footer>
 
 
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
 
 
 
 
 
 
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-  
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-    
-      
-    
-      
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-    
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

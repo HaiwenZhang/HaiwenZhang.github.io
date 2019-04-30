@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.4" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>机器学习基石笔记：学习的类型 | Haiwen</title>
+    <meta property="og:title" content="机器学习基石笔记：学习的类型 - Haiwen">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-07-08T19:50:45&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-07-08T19:50:45&#43;08:00">
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序">
+    <meta name="description" content="机器学习基石笔记：学习的类型">
+        
+    <meta name="author" content="Haiwen">
+    <meta property="og:url" content="http://example.org/posts/ML-Foundations-Notes03/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://example.org/">
+                        Haiwen
+                    </a>
+                
+                <p class="description">但行好事，莫问前程</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="http://example.org/">首页</a>
+                    
+                    <a  href="http://example.org/archives/" title="归档">归档</a>
+                    
+                    <a  href="http://example.org/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">机器学习基石笔记：学习的类型</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年7月8日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://example.org/categories/Machine-Learning">Machine Learning</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <h3 id="一-learning-with-different-output-space">一、 Learning with Different Output Space</h3>
+
+<p>二元分类问题：</p>
+
+<p><span  class="math">\[
+y=\{+1, -1\}
+\]</span></p>
+
+<p>输出只有两个，+1表示正类，-1表示负类。二元分类的问题很常见，例如信用卡发放、垃圾邮件判别等等。二元分类是机器学习最基本的问题。二元分类有线性模型和非线性模型，需要依据具体的问题选择对应的模型。下图展示了常见的二元分类：</p>
+
+<p><figure><img src="/images/machine_learning_foundations/types_of_learning_01.png" alt=""></figure></p>
+
+<p>除了二元分类，我们遇到的更多的是多元分类问题,也就是输出有多个。</p>
+
+<p><span  class="math">\[
+y=\{1, 2, 3, ..., k\}
+\]</span></p>
+
+<p>其中$k&gt;2$，一般多元分类常应用在手写数字识别，图像识别，语音识别等等。</p>
+
+<p>二元分类和多元分类都属于分类问题，它们的输出都是离散值。对于另外一种情况，比如预测房屋价格、股票收益多少等，这类问题的输出y=R，即范围在整个实数空间，是连续的。这类问题，我们把它叫做回归。</p>
+
+<p>除了分类和回归问题，在自然语言处理等领域中，还会用到一种机器学习问题：结构化学习。结构化学习的输出空间包含了某种结构在里面，它的一些解法通常是从多分类问题延伸而来的，比较复杂。</p>
+
+<p><figure><img src="/images/machine_learning_foundations/types_of_learning_02.png" alt=""></figure></p>
+
+<h3 id="二learning-with-different-data-label">二、Learning with Different Data Label</h3>
+
+<p>监督学习：对于训练集$D$，任意的$x_n$都有对应的输出标签$y_n$。监督学习可以是二元分类，多元分类或者回归问题。</p>
+
+<p>非监督学习：对于训练集$D$，任意的$x_n$是没有对应的输出标签$y_n$。非监督学习包括聚类、密度估计、异常值检测。</p>
+
+<p>半监督学习：顾名思义它是介于监督学习和非监督学习之间。也就是对于训练集$D$，有的$x_n$有对应的输出标签$y_n$， 而有的$x_n$则没有对应的输出标签$y_n$。</p>
+
+<p>增强学习：我们给模型或系统一些输入，但是给不了我们希望的真实的输出$y$，根据模型的输出反馈，如果反馈结果良好，更接近真实输出，就给其正向激励，如果反馈结果不好，偏离真实输出，就给其反向激励。</p>
+
+<p><figure><img src="/images/machine_learning_foundations/types_of_learning_03.png" alt=""></figure></p>
+
+<h3 id="三learning-with-different-protocol">三、Learning with Different Protocol</h3>
+
+<p>Batch learning: 获得的训练数据$D$是一批的，即一次性拿到整个$D$，对其进行学习建模，得到我们最终的机器学习模型。</p>
+
+<p>Online learning: 是一种在线学习模型，数据是实时更新的，根据数据一个个进来，同步更新我们的算法。</p>
+
+<p>Active learning: 让机器具备主动问问题的能力，例如手写数字识别，机器自己生成一个数字或者对它不确定的手写字主动提问。</p>
+
+<p><figure><img src="/images/machine_learning_foundations/types_of_learning_04.png" alt=""></figure></p>
+
+<h3 id="四learning-with-different-input-space">四、Learning with Different Input Space</h3>
+
+<p>Concrete features: 比如说硬币分类问题中硬币的尺寸、重量等；比如疾病诊断中的病人信息等具体特征。对机器学习来说concrete features 最容易理解和使用。</p>
+
+<p>Raw features: 比如说手写数字识别中每个数字所在图片的mxn维像素值；比如语音信号的频谱等。raw features一般比较抽象，经常需要人或者机器来转换为其对应的concrete features，这个转换的过程就是Feature Transform。</p>
+
+<p>Abstract features。比如某购物网站做购买预测时，提供给参赛者的是抽象加密过的资料编号或者ID，这些特征X完全是抽象的，没有实际的物理含义。所以对于机器学习来说是比较困难的，需要对特征进行更多的转换和提取。</p>
+
+<p><figure><img src="/images/machine_learning_foundations/types_of_learning_05.png" alt=""></figure></p>
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/ML-Foundations-Notes02/">机器学习基石笔记：感知机</a></li>
+        
+        <li><a href="/posts/ML-Foundations-Notes01/">机器学习基石笔记：学习问题</a></li>
+        
+        <li><a href="/posts/visual-rdd-api-03/">Spark入门：可视化RDD的算子(3)</a></li>
+        
+        <li><a href="/posts/visual-rdd-api-02/">Spark入门：可视化RDD的算子(2)</a></li>
+        
+        <li><a href="/posts/visual-rdd-api-01/">Spark入门：可视化RDD的算子(1)</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="http://example.org/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3">机器学习基石</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://example.org/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://example.org/posts/design-pattern-simple-factory/" title="设计模式之简单工厂模式">设计模式之简单工厂模式</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/ML-Foundations-Notes03/" title="机器学习基石笔记：学习的类型">机器学习基石笔记：学习的类型</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/ML-Foundations-Notes02/" title="机器学习基石笔记：感知机">机器学习基石笔记：感知机</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/ML-Foundations-Notes01/" title="机器学习基石笔记：学习问题">机器学习基石笔记：学习问题</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/visual-rdd-api-03/" title="Spark入门：可视化RDD的算子(3)">Spark入门：可视化RDD的算子(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/visual-rdd-api-02/" title="Spark入门：可视化RDD的算子(2)">Spark入门：可视化RDD的算子(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/visual-rdd-api-01/" title="Spark入门：可视化RDD的算子(1)">Spark入门：可视化RDD的算子(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/sparkrdd/" title="Spark入门：核心概念RDD">Spark入门：核心概念RDD</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/hdfstheory/" title="HDFS读写浅析">HDFS读写浅析</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/posts/hdfsinf/" title="HDFS 简介">HDFS 简介</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://example.org/categories/Hadoop/">Hadoop(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Machine-Learning/">Machine-Learning(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Ruby/">Ruby(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Scala/">Scala(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/Spark/">Spark(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://example.org/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://example.org/tags/Hadoop/">Hadoop</a>
+    
+    <a href="http://example.org/tags/Java/">Java</a>
+    
+    <a href="http://example.org/tags/Nginx/">Nginx</a>
+    
+    <a href="http://example.org/tags/RDD/">RDD</a>
+    
+    <a href="http://example.org/tags/Rails/">Rails</a>
+    
+    <a href="http://example.org/tags/Ruby/">Ruby</a>
+    
+    <a href="http://example.org/tags/Scala/">Scala</a>
+    
+    <a href="http://example.org/tags/Spark/">Spark</a>
+    
+    <a href="http://example.org/tags/%E5%85%83%E7%BC%96%E7%A8%8B/">元编程</a>
+    
+    <a href="http://example.org/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">函数式编程</a>
+    
+    <a href="http://example.org/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/">机器学习基石</a>
+    
+    <a href="http://example.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://example.org/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://example.org/">Haiwen By Haiwen</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>
