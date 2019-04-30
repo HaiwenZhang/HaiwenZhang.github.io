@@ -148,7 +148,11 @@ h(x) = sign(\sum_{i=1}^nw_ix_i - threshold)
 
 <p>根据PLA的定义，当找到一条直线，能将所有平面上的点都分类正确，那么PLA就停止了。要达到这个终止条件，就必须保证$D$是线性可分。如果是非线性可分的，那么，PLA就不会停止。那么对于线性可分的情况下，我们只是直观的觉得PLA会停止，接下来我们尝试去证明一下这个结论：</p>
 
-<p>我们不妨假设存在这样一条直线可以将类分开，令这条直线的权重为$w_f$，则对于数据集$D$上任意一个点满足$y<em>n=sign(w</em>{f}^Tx_{n})$</p>
+<p>我们不妨假设存在这样一条直线可以将类分开，令这条直线的权重为$w_f$，则对于数据集$D$上任意一个点满足</p>
+
+<p><span  class="math">\[
+y_n=sign(w_{f}^Tx_{n})
+\]</span></p>
 
 <p>于是有一下条件成立：</p>
 
@@ -215,7 +219,13 @@ w_{t} = w_{t-1} + y_{n(t)}x_{n(t)}
 \end{aligned}
 \]</span></p>
 
-<p>又因为${w_{f}<sup>T\over||w_{f}||}\cdot{w_{f}</sup>T\over||w_{f}||} \leq 1$, 于是就有：</p>
+<p>又因为</p>
+
+<p><span  class="math">\[
+{w_{f}^T\over||w_{f}||}\cdot{w_{f}^T\over||w_{f}||}\leq1
+\]</span></p>
+
+<p>于是就有：</p>
 
 <p><span  class="math">\[
 \begin{aligned}
