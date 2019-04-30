@@ -2,120 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Haiwen</title>
-    <link>http://example.org/tags/</link>
+    <link>https://haiwenzhang.github.io/tags/</link>
     <description>Recent content in Tags on Haiwen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Nov 2018 10:10:49 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://haiwenzhang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Java</title>
-      <link>http://example.org/tags/Java/</link>
+      <link>https://haiwenzhang.github.io/tags/Java/</link>
       <pubDate>Thu, 01 Nov 2018 10:10:49 +0000</pubDate>
       
-      <guid>http://example.org/tags/Java/</guid>
+      <guid>https://haiwenzhang.github.io/tags/Java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>设计模式</title>
-      <link>http://example.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://haiwenzhang.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Thu, 01 Nov 2018 10:10:49 +0000</pubDate>
       
-      <guid>http://example.org/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://haiwenzhang.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>机器学习基石</title>
-      <link>http://example.org/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/</link>
+      <link>https://haiwenzhang.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/</link>
       <pubDate>Sun, 08 Jul 2018 19:50:45 +0000</pubDate>
       
-      <guid>http://example.org/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/</guid>
+      <guid>https://haiwenzhang.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%9F%B3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RDD</title>
-      <link>http://example.org/tags/RDD/</link>
+      <link>https://haiwenzhang.github.io/tags/RDD/</link>
       <pubDate>Fri, 04 May 2018 19:37:39 +0000</pubDate>
       
-      <guid>http://example.org/tags/RDD/</guid>
+      <guid>https://haiwenzhang.github.io/tags/RDD/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spark</title>
-      <link>http://example.org/tags/Spark/</link>
+      <link>https://haiwenzhang.github.io/tags/Spark/</link>
       <pubDate>Fri, 04 May 2018 19:37:39 +0000</pubDate>
       
-      <guid>http://example.org/tags/Spark/</guid>
+      <guid>https://haiwenzhang.github.io/tags/Spark/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hadoop</title>
-      <link>http://example.org/tags/Hadoop/</link>
+      <link>https://haiwenzhang.github.io/tags/Hadoop/</link>
       <pubDate>Fri, 27 Apr 2018 14:29:09 +0000</pubDate>
       
-      <guid>http://example.org/tags/Hadoop/</guid>
+      <guid>https://haiwenzhang.github.io/tags/Hadoop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nginx</title>
-      <link>http://example.org/tags/Nginx/</link>
+      <link>https://haiwenzhang.github.io/tags/Nginx/</link>
       <pubDate>Sat, 24 Feb 2018 20:29:43 +0000</pubDate>
       
-      <guid>http://example.org/tags/Nginx/</guid>
+      <guid>https://haiwenzhang.github.io/tags/Nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rails</title>
-      <link>http://example.org/tags/Rails/</link>
+      <link>https://haiwenzhang.github.io/tags/Rails/</link>
       <pubDate>Sat, 24 Feb 2018 20:29:43 +0000</pubDate>
       
-      <guid>http://example.org/tags/Rails/</guid>
+      <guid>https://haiwenzhang.github.io/tags/Rails/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scala</title>
-      <link>http://example.org/tags/Scala/</link>
+      <link>https://haiwenzhang.github.io/tags/Scala/</link>
       <pubDate>Mon, 25 Dec 2017 16:48:17 +0000</pubDate>
       
-      <guid>http://example.org/tags/Scala/</guid>
+      <guid>https://haiwenzhang.github.io/tags/Scala/</guid>
       <description></description>
     </item>
     
     <item>
       <title>函数式编程</title>
-      <link>http://example.org/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
+      <link>https://haiwenzhang.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Mon, 25 Dec 2017 16:48:17 +0000</pubDate>
       
-      <guid>http://example.org/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://haiwenzhang.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ruby</title>
-      <link>http://example.org/tags/Ruby/</link>
+      <link>https://haiwenzhang.github.io/tags/Ruby/</link>
       <pubDate>Sun, 24 Dec 2017 09:42:13 +0000</pubDate>
       
-      <guid>http://example.org/tags/Ruby/</guid>
+      <guid>https://haiwenzhang.github.io/tags/Ruby/</guid>
       <description></description>
     </item>
     
     <item>
       <title>元编程</title>
-      <link>http://example.org/tags/%E5%85%83%E7%BC%96%E7%A8%8B/</link>
+      <link>https://haiwenzhang.github.io/tags/%E5%85%83%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Sun, 24 Dec 2017 09:42:13 +0000</pubDate>
       
-      <guid>http://example.org/tags/%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://haiwenzhang.github.io/tags/%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
       <description></description>
     </item>
     

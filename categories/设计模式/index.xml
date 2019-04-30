@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>设计模式 on Haiwen</title>
-    <link>http://example.org/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+    <link>https://haiwenzhang.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
     <description>Recent content in 设计模式 on Haiwen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Nov 2018 10:10:49 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://haiwenzhang.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>设计模式之简单工厂模式</title>
-      <link>http://example.org/posts/design-pattern-simple-factory/</link>
+      <link>https://haiwenzhang.github.io/posts/design-pattern-simple-factory/</link>
       <pubDate>Thu, 01 Nov 2018 10:10:49 +0000</pubDate>
       
-      <guid>http://example.org/posts/design-pattern-simple-factory/</guid>
+      <guid>https://haiwenzhang.github.io/posts/design-pattern-simple-factory/</guid>
       <description>&lt;h2 id=&#34;一-定义&#34;&gt;一、定义&lt;/h2&gt;
 
 &lt;p&gt;简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式。在简单工厂模式中，可以根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。&lt;/p&gt;</description>

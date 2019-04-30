@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hadoop on Haiwen</title>
-    <link>http://example.org/categories/Hadoop/</link>
+    <link>https://haiwenzhang.github.io/categories/Hadoop/</link>
     <description>Recent content in Hadoop on Haiwen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Apr 2018 14:29:09 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/categories/Hadoop/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://haiwenzhang.github.io/categories/Hadoop/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HDFS读写浅析</title>
-      <link>http://example.org/posts/hdfstheory/</link>
+      <link>https://haiwenzhang.github.io/posts/hdfstheory/</link>
       <pubDate>Fri, 27 Apr 2018 14:29:09 +0000</pubDate>
       
-      <guid>http://example.org/posts/hdfstheory/</guid>
+      <guid>https://haiwenzhang.github.io/posts/hdfstheory/</guid>
       <description>&lt;h2 id=&#34;一-hdfs-架构&#34;&gt;一、HDFS 架构&lt;/h2&gt;</description>
     </item>
     
     <item>
       <title>HDFS 简介</title>
-      <link>http://example.org/posts/hdfsinf/</link>
+      <link>https://haiwenzhang.github.io/posts/hdfsinf/</link>
       <pubDate>Mon, 23 Apr 2018 15:56:22 +0000</pubDate>
       
-      <guid>http://example.org/posts/hdfsinf/</guid>
+      <guid>https://haiwenzhang.github.io/posts/hdfsinf/</guid>
       <description>&lt;h2 id=&#34;1-什么是hdfs&#34;&gt;1 什么是HDFS?&lt;/h2&gt;
 
 &lt;p&gt;HDFS是一个分布式文件系统，适合部署在廉价的机器上。HDFS适合一次写入，多次读取的场景，且不支持文件的修改。&lt;/p&gt;</description>

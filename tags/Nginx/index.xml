@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on Haiwen</title>
-    <link>http://example.org/tags/Nginx/</link>
+    <link>https://haiwenzhang.github.io/tags/Nginx/</link>
     <description>Recent content in Nginx on Haiwen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 24 Feb 2018 20:29:43 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/Nginx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://haiwenzhang.github.io/tags/Nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rails Nginx 实现下载受限文件的优化</title>
-      <link>http://example.org/posts/rails-nginx-sendfile/</link>
+      <link>https://haiwenzhang.github.io/posts/rails-nginx-sendfile/</link>
       <pubDate>Sat, 24 Feb 2018 20:29:43 +0000</pubDate>
       
-      <guid>http://example.org/posts/rails-nginx-sendfile/</guid>
+      <guid>https://haiwenzhang.github.io/posts/rails-nginx-sendfile/</guid>
       <description>&lt;h2 id=&#34;需求&#34;&gt;需求&lt;/h2&gt;
 
 &lt;p&gt;在Web开发中经常遇到一些文件需要用户认证和授权才能够访问，实现这样的功能需要在App Server进行。当遇到大文件或者并发量增加的时候，容易造成性能问题。为什么会这样呢？让我们从操作系统层面来分析一下：&lt;/p&gt;</description>

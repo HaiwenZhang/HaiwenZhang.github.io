@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scala on Haiwen</title>
-    <link>http://example.org/tags/Scala/</link>
+    <link>https://haiwenzhang.github.io/tags/Scala/</link>
     <description>Recent content in Scala on Haiwen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Dec 2017 16:48:17 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/Scala/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://haiwenzhang.github.io/tags/Scala/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Scala函数式编程札记01</title>
-      <link>http://example.org/posts/scala-fp-01/</link>
+      <link>https://haiwenzhang.github.io/posts/scala-fp-01/</link>
       <pubDate>Mon, 25 Dec 2017 16:48:17 +0000</pubDate>
       
-      <guid>http://example.org/posts/scala-fp-01/</guid>
+      <guid>https://haiwenzhang.github.io/posts/scala-fp-01/</guid>
       <description>&lt;p&gt;最近为了研究Spark，开启了Scala的学习之旅，然后便一发不可收拾。。。。。。那么Scala是一门什么样的语言呢？有些人说它是JVM上的C++；也有些人说它是Haskell，不过比Haskell弱。Scala的官网上有一句话：Object-Oriented Meets Functional，什么意思呢？简单来说就是“面向对象”这位帅气的小伙子偶遇了“函数式”这位邻家小妹妹，发生了一段计算机界惊天动地的情缘，于是便产生了Scala。一说到了面向对象，C++、Java、Python等便在脑海里显现出来了，可是对于函数式编程很多工程师肯定是只听其声不见其人。那么今天就随我一起去揭开邻家小妹妹神秘的面纱吧！&lt;/p&gt;</description>
     </item>
     
