@@ -1,0 +1,10 @@
+[submodule "themes/ananke"]
+	path = themes/ananke
+	url = https://github.com/budparr/gohugo-theme-ananke.git
+[submodule "themes/hugo-nuo"]
+	path = themes/hugo-nuo
+	url = https://github.com/laozhu/hugo-nuo.git
+[submodule "public"]
+	path = public
+	url = git@github.com:HaiwenZhang/haiwenzhang.github.io.git
+	branch = master

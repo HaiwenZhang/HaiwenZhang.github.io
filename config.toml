@@ -1,0 +1,29 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Haiwen"
+theme = "maupassant"
+preserveTaxonomyNames = true
+disablePathToLower = true
+
+[author]
+  name = "Haiwen"
+
+[params]
+  author = "Haiwen"
+  subtitle = "但行好事，莫问前程"
+  keywords = "golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序"
+  description = "Mac/Gentoo党，Emacs/Vim异教徒，会写Python/Java/Scala程序, AI调参新手，徽学爱好者，菜鸟摄影师, 热爱葡萄酒。"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "archives"
+    name = "归档"
+    url = "/archives/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 4
